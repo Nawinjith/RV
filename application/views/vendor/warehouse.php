@@ -1,0 +1,1 @@
+<h1>add view warehouse stock and status here</h1>
