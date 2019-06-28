@@ -35,7 +35,16 @@ class Admin extends CI_Controller {
 
 	public function warehouseStock()	//warehouse stock
 	{	
-		$this->load->view('admin/warehousestock.php');
+		$this->load->Model('Model2');
+		$data['result']=$this->Model2->getdata();
+		$this->load->view('admin/warehousestock.php',$data);
+	}
+
+	public function updateWarehouse()	//warehouse stock
+	{	
+		$this->load->Model('Model2');
+		$data['result']=$this->Model2->updatedata();
+		redirect('Admin/warehousestock.php');
 	}
 
 	public function salesHistory()

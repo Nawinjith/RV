@@ -51,7 +51,7 @@
     </header>
     <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">ADMIN</div>
         <ul class="sidebar-menu list-unstyled">
               <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin" class="sidebar-link text-muted "><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
               <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted active"><i class="o-database-1 mr-3 text-gray"></i><span>Update Stock Status</span></a>
@@ -70,7 +70,67 @@
         <div class="container-fluid px-xl-5">
          <br>
          <br>
-         <h1>include warehouse stock here</h1>
+                <div class="container">
+            <br>
+            <br>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Warehouse ID</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Maximum Capacity</th>
+                        <th scope="col">Current Capacity</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach( $result as $row ) {?>
+                        <tr>
+                        <td><?php echo $row->warehouseID?></td>
+                        <td><?php echo $row->location ?></td>
+                        <td><?php echo $row->capacity?></td>
+                        <td>insert here</td>
+                        <td> <button type="button" data-toggle="modal" data-target="#exampleModalScrollable" class="btn btn-primary">Edit</button>
+                                      <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                         
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                  <form method="post" action="<?php echo site_url('Admin/updateWarehouse')?>">
+                                          <div class="form-group">
+                                              <label for="warehouseid">Warehouse ID</label>
+                                              <input type="text" class="form-control" id="productid" name="warehouseid" value="<?php echo $row->warehouseID?>"  >
+                                
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="capacity">Maximum Capacity</label>
+                                              <small  class="form-text text-muted">Capacity in Kgs</small>
+                                              <input type="text" class="form-control" id="productname" name="capacity" value="<?php echo $row->capacity?>">   
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="curcapacity">Current Capacity</label> 
+                                              <!-- set a join here -->
+                                              <input type="text" class="form-control" id="quantity" name="curcapacity" >   
+                                          </div>
+                                         
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                          <a href="<?php echo site_url('Admin/warehousestock')?> "><button type="button" class="btn btn-danger">Cancel</button> </a>
+                                  </form>
+                                  </div>                  
+                                  </div>
+                              </div>
+                              </div>
+                        </td>   
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
           
          
         </div>
