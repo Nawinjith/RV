@@ -95,7 +95,6 @@
                     <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                         <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin/registrationUser" class="sidebar-link text-muted pl-lg-5">New User/Client</a></li>
-                        <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin/registrationSales" class="sidebar-link text-muted pl-lg-5">New Salesperson</a></li>
                     </ul>
                     </div>
             </li>

@@ -43,13 +43,12 @@
       <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
         <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
+              <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin" class="sidebar-link text-muted "><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
 
-              <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Registration</span></a>
+              <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray active"></i><span>Registration</span></a>
                     <div id="pages" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                        <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin/registrationUser" class="sidebar-link text-muted pl-lg-5">New User/Client</a></li>
-                        <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin/registrationSales" class="sidebar-link text-muted pl-lg-5">New Salesperson</a></li>
+                        <li class="sidebar-list-item"><a href="<?php echo base_url(); ?>index.php/admin/registrationUser" class="sidebar-link text-muted pl-lg-5 active">New User/Client</a></li>
                     </ul>
                     </div>
             </li>
@@ -69,18 +68,18 @@
                     <h3 class="h6 text-uppercase mb-0">Enter Registration Details Below</h3>
                   </div>
                   <div class="card-body">
-                    <form class="form-horizontal">
+                    <form method="post" class="form-horizontal" action="<?php echo site_url('Admin/createuser')?>">
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Full Name</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="name">
                         </div>
                       </div>
                       <div class="line"></div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">User ID</label>
                         <div class="col-md-9">
-                          <input type="text" class="form-control"><small class="form-text text-muted ml-3">This could be used for your login later.</small>
+                          <input type="text" class="form-control" name="id"><small class="form-text text-muted ml-3">This could be used for your login later.</small>
                         </div>
                       </div>
                       <div class="line"></div>
@@ -104,11 +103,11 @@
                         <div class="col-md-9">
                           
                           <div class="custom-control custom-radio custom-control-inline">
-                            <input id="customRadioInline1" type="radio" name="customRadioInline1" class="custom-control-input">
+                            <input id="customRadioInline1" type="radio" name="radio1" class="custom-control-input">
                             <label for="customRadioInline1" class="custom-control-label">SalesPerson</label>
                           </div>
                           <div class="custom-control custom-radio custom-control-inline">
-                            <input id="customRadioInline2" type="radio" name="customRadioInline1" class="custom-control-input">
+                            <input id="customRadioInline2" type="radio" name="radio1" class="custom-control-input">
                             <label for="customRadioInline2" class="custom-control-label">Shop/Client</label>
                           </div>
                         </div>
@@ -117,21 +116,21 @@
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Address</label>
                         <div class="col-md-9">
-                          <input type="text" name="email" class="form-control">
+                          <input type="text" name="address" class="form-control">
                         </div>
                       </div>
                       <div class="line"></div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Contact Number<br><small class="text-primary">Residential</small></label>
                         <div class="col-md-9">
-                          <input type="text" name="email" class="form-control">
+                          <input type="text" name="cnumres" class="form-control">
                         </div>
                       </div>
                       <div class="line"></div>
                       <div class="form-group row">
                         <label class="col-md-3 form-control-label">Contact Number<br><small class="text-primary">Mobile</small></label>
                         <div class="col-md-9">
-                          <input type="text" name="email" class="form-control">
+                          <input type="text" name="cnummob" class="form-control">
                         </div>
                       </div>
                       <div class="line"></div>

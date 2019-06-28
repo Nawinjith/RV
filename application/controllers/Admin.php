@@ -13,15 +13,20 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/viewStock.php');
 	}
 
-	public function registrationUser()			//client registration
+	public function registrationUser()			//client registration/ salesperson registration
 	{	
 		$this->load->view('admin/registrationUser.php');
 	}
 
-	public function registrationSales()	//salesperson registration
+	public function createuser()			
 	{	
-		$this->load->view('admin/registrationSales.php');
+		$this->load->Model('Model1');
+		$this->Model1->create();
+
+		redirect('Admin/registrationUser');
 	}
+
+	
 
 	public function importOrders()	//import orders
 	{	
