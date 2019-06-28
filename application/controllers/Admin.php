@@ -30,7 +30,16 @@ class Admin extends CI_Controller {
 
 	public function importOrders()	//import orders
 	{	
-		$this->load->view('admin/importorders.php');
+		$this->load->Model('Model2');
+		$data['result']=$this->Model2->getdataimports();
+		$this->load->view('admin/importorders.php',$data);
+	}
+
+	public function updateImport()	//import orders
+	{	
+		$this->load->Model('Model2');
+		$data['result']=$this->Model2->updateimports();
+		$this->load->view('admin/importorders.php',$data);
 	}
 
 	public function warehouseStock()	//warehouse stock

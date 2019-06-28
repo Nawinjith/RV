@@ -110,6 +110,10 @@
                             <input id="customRadioInline2" type="radio" name="radio1" class="custom-control-input">
                             <label for="customRadioInline2" class="custom-control-label">Shop/Client</label>
                           </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input id="customRadioInline3" type="radio" name="radio1" class="custom-control-input">
+                            <label for="customRadioInline3" class="custom-control-label">Import Dealer</label>
+                          </div>
                         </div>
                       </div>
                       <div class="line"></div>

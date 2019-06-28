@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model2 extends CI_Model {
+class Model2 extends CI_Model { //warehouse details
     
     function getdata(){
         $query=$this->db->get('warehouse');
@@ -20,5 +20,24 @@ class Model2 extends CI_Model {
         );
         $this->db->where('warehouseID='.$warehouseID);
         $this->db->update('warehouse',$data); 
+    }
+
+    function getdataimports(){
+        $query=$this->db->get('product_import');
+        return $query->result();
+    }
+
+    function searchimports($importNo){
+        $this->db->where('importNo',$importNo);
+        $query=$this->db->get('product_import');
+        return $query->row();
+    }
+    function updateimports($importNo){       
+        $data = array (
+
+            'flag'=> $this->input->post('cnumres')
+        );
+        $this->db->where('importNo='.$importNo);
+        $this->db->update('product_import',$data);
     }
 }

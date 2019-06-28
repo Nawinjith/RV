@@ -70,9 +70,69 @@
         <div class="container-fluid px-xl-5">
          <br>
          <br>
+         <div class="container">
+            <br>
+            <br>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Import Number</th>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Dealer ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach( $result as $row ) {?>
+                        <tr>
+                        <td><?php echo $row->importNo?></td>
+                        <td><?php echo $row->productID_fk ?></td>
+                        <td><?php echo $row->quantity?></td>
+                        <td><?php echo $row->dealerID_fk?></td>
+                        <td><?php echo $row->date?></td>
+                        <td> <button type="button" data-toggle="modal" data-target="#exampleModalScrollable" class="btn btn-primary">Status</button>
+                                      <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                         
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                  <form method="post" action="<?php echo site_url('Admin/updateImport')?>">
+                                          <div class="form-group">
+                                              <label for="importid">Import Number</label>
+                                              <input type="text" class="form-control" id="importid" name="importid" value="<?php echo $row->importNo?>"  >
+                                
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="productidy">Product ID</label>
+                                              <input type="text" class="form-control" id="productid" name="productid" value="<?php echo $row->productID_fk?>">   
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="date">Scheduled Date</label> 
+                                              <br>
+                                              <?php echo $row->date?>
+                                          </div>
+                                         
+                                          <button type="submit" class="btn btn-primary">Received</button>
+                                          <a href="<?php echo site_url('Admin/importOrders')?> "><button type="button" class="btn btn-danger">Cancel</button> </a>
+                                  </form>
+                                  </div>                  
+                                  </div>
+                              </div>
+                              </div>
+                        </td>    
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
          
-          <h1>include import orders here</h1>
-         
+                </div>
         </div>
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
           <div class="container-fluid">
