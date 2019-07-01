@@ -63,7 +63,23 @@
         <div class="container-fluid px-xl-5">
          <br>
          <br>
-                    <h1>include feedback form here</h1>
+                    <h1>Provide Your Feedback</h1>
+
+                    <div style="margin:auto; width:80%";>
+                      <form method="post" action="<?php echo (site_url('Shop/feedback'))?>">
+                        <div class="form-group">
+                          <label for="exampleInputPassword">Shop Id</label>
+                          <input type="text" class="form-control" id="exampleInputPassword" placeholder="ex:E00001" name="ShopID">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Feedback</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  name="feedback"></textarea>
+                        </div>
+
+                        <button type="submit" name="save" value="Save Data" class="btn btn-secondary">Send</button><br>
+                      </form>
+                    </div>
          
          
         </div>

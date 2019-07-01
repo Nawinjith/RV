@@ -8,6 +8,13 @@ class Shop extends CI_Controller {
 		$this->load->view('shop/shopmain.php');
 	}
 
+	public function __construct()
+        {
+            parent::__construct();
+            $this->load->database();
+            $this->load->model('Model3');
+        }
+
 	public function viewStock()
 	{
 		$this->load->view('shop/shopstock.php');
@@ -15,7 +22,16 @@ class Shop extends CI_Controller {
 
 	public function feedback()
 	{
-		$this->load->view('shop/shopmakefeedback.php');
+		if($this->input->post('save')){
+			$shopID_fk=$this->input->post('ShopID');
+			$description=$this->input->post('feedback');
+			   
+			$this->Model3->saverecords($shopID_fk,$description);
+			$this->load->view('shop');
+		   
+	   }
+	   else
+			$this->load->view('shop/shopmakefeedback.php');
 	}
 
 	public function sales_history()
