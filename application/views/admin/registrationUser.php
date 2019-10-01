@@ -65,7 +65,7 @@
               <div class="col-lg-12 mb-5">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="h6 text-uppercase mb-0">Enter Registration Details Below</h3>
+                    <h3 class="h6 text-uppercase mb-0">Enter Registration Details</h3>
                   </div>
                   <div class="card-body">
                     <form method="post" class="form-horizontal" action="<?php echo site_url('Admin/createuser')?>">
