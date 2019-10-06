@@ -43,7 +43,7 @@
 
               <div class="slide">
                 <h1 class="text-uppercase" data-aos="fade-up">Monitor you Sales</h1>
-                <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">How's your progress over products and their sales</p>
+                <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">How is your progress over products and their sales</p>
                 <div data-aos="fade-up" data-aos-delay="100">
                   <a href="#contact-section"  class="btn  btn-primary mr-2 mb-2">Get In Touch</a>
                 </div>
@@ -51,7 +51,7 @@
 
               <div class="slide">
                 <h1 class="text-uppercase" data-aos="fade-up">Hassle-free Payment</h1>
-                <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">We accept online payments from leading global payment gateways. Select from Cash-on-Delivery adn Cheque payments as well</p>
+                <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">We accept online payments from leading Global Payment Gateways. Select from Cash-on-Delivery adn Cheque payments as well</p>
                 <div data-aos="fade-up" data-aos-delay="100">
                   <a href="#contact-section"  class="btn  btn-primary mr-2 mb-2">Get In Touch</a>
                 </div>
